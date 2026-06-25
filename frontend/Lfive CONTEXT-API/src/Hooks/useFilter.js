@@ -1,0 +1,58 @@
+import { useCallback, useMemo, useState } from "react";
+
+export const useFilter = () => {
+  const [productList, setProductList] = useState([]);
+  const [onlyInStock, setOnlyInStock] = useState(false);
+  const [bestSellerOnly, setBestSellerOnly] = useState(false);
+  const [sortBy, setSortBy] = useState(null);
+  const [ratings, setRatings] = useState(null);
+
+  const filteredProducts = useMemo(() => {
+    let filtered = [...productList];
+    // filler by best seller
+    if (bestSellerOnly) {
+      filtered = filtered.filter((p) => p.best_seller === true);
+    }
+    // fillter by in stock
+    if (onlyInStock) {
+      filtered = filtered.filter((p) => p.in_stock === true);
+    }
+
+    // fillter by rating
+    if (ratings) {
+      const ratingsValue = parseInt(ratings.replace("STARSABOVE", ""));
+      filtered = filtered.filter((p) => p.ratings >= ratingsValue);
+    }
+
+    // sort by price
+    if (sortBy === "lowtohigh") {
+      filtered.sort((a, b) => Number(a.price) - Number(b.price));
+    } else if (sortBy === "hightolow") {
+      filtered.sort((a, b) => Number(b.price) - Number(a.price));
+    }
+
+    return filtered;
+  }, [onlyInStock, bestSellerOnly, sortBy, ratings, productList]);
+
+  const clearFilters = useCallback(() => {
+    setOnlyInStock(false);
+    setBestSellerOnly(false);
+    setSortBy(null);
+    setRatings(null);
+  }, []);
+
+  return {
+     productList,
+    filteredProducts,
+    setProductList,
+    onlyInStock,
+    setOnlyInStock,
+    bestSellerOnly,
+    setBestSellerOnly,
+    sortBy,
+    setSortBy,
+    ratings,
+    setRatings,
+    clearFilters
+  };
+};
