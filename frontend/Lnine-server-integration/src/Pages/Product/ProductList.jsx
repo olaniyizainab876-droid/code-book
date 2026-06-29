@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
-import ProductCard from "../../components/elements/ProductCard";
 import { useTitle } from "../../hooks/useTitle";
 import { useLocation } from "react-router-dom";
 import { FilterBar } from "./components/Filterbar";
 import { toast } from "react-toastify";
-import { useCart, useFilter } from "../../context";
-import { getProductList } from "../../services/productServices";
+import { useCart, useFilter } from "../../context/Index";
+import { getProductList } from "../../Services/productServices";
 import CartList from "../Cart/CartList";
-
-
+import ProductCard from "../../Components/elements/Productcard";
 const ProductList = () => {
   useTitle("Ebook collection");
   const [show, setShow] = useState(false);
@@ -185,7 +183,13 @@ const ProductList = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product) => (
-                <ProductCard key={product.id} product={product} cartList={cartList} addToCart={addToCart} removeFromCart={removeFromCart} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  cartList={cartList}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
               ))}
             </div>
 
