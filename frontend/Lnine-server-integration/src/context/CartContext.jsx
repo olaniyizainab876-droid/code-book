@@ -6,7 +6,7 @@ import {
   clearCartAPI,
   getUserCart,
   removeFromCartAPI,
-} from "../services";
+} from "../Services";
 import { toastOption } from "../config/utils";
 
 const cartInitialState = {

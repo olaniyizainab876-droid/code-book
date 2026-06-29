@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "../../context";
-import { useTitle } from "../../Hooks/useTitle";
-import CartEmpty from "./Components/CartEmpty";
+import { useTitle } from "../../hooks/useTitle";
+import CartEmpty from "./components/CartEmpty";
 import CartList from "./CartList";
 
 const Cartpage = () => {

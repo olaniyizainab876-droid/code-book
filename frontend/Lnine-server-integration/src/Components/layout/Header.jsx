@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import DropdownLogin from "../elements/DropdownLogin";
 import DropdownLogout from "../elements/DropdownLogout";
-import { checkLoginStatus } from "../../services";
+import { checkLoginStatus } from "../../Services";
 import { useCart } from "../../context/CartContext";
 import Search from "../Sections/Search";
 

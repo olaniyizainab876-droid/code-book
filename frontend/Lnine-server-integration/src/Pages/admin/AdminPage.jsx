@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { useTitle } from "../../Hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
 import AdminProductList from "../../Components/Admin/AdminProductList";
 import { toast } from "react-toastify";
 import AdminProductForm from "../../Components/Admin/AdminProductForm";
-
 
 const AdminPage = () => {
   useTitle("Admin Dashboard - CodeBook");
   const [activeTab, setActiveTab] = useState("products");
   const [editingProduct, setEditingProduct] = useState(null);
-
- 
 
   const handleEditProduct = (product) => {
     setEditingProduct(product);
@@ -23,10 +20,10 @@ const AdminPage = () => {
     console.log("Would delete product:", id);
   };
 
-    const handleFormSuccess=  () =>{
-      setActiveTab("products")
-      setEditingProduct(null)
-    } 
+  const handleFormSuccess = () => {
+    setActiveTab("products");
+    setEditingProduct(null);
+  };
   return (
     <main className="mx-auto max-w-7xl px-4 md:px-6 py-12">
       <div className="flex justify-between items-center mb-8">
@@ -105,7 +102,7 @@ const AdminPage = () => {
           <li>Complete form validation from backend</li>
           <li>Proper error handling and user feedback</li>
         </ol>
-      </div> 
+      </div>
     </main>
   );
 };

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useTitle } from "../../Hooks/useTitle";
+import { useTitle } from "../../hooks/useTitle";
 import { useLocation, useNavigate } from "react-router-dom";
-import OrderSuccess from "./Components/OrderSuccess";
-import OrderFail from "./Components/OrderFail";
+import OrderSuccess from "./components/OrderSuccess";
+import OrderFail from "./components/OrderFail";
 
 const Order = () => {
   useTitle("Order-Summary");

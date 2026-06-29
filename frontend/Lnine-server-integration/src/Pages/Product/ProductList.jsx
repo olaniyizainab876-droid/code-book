@@ -4,10 +4,10 @@ import { useTitle } from "../../hooks/useTitle";
 import { useLocation } from "react-router-dom";
 import { FilterBar } from "./components/Filterbar";
 import { toast } from "react-toastify";
-import { useCart, useFilter } from "../../context/Index";
+import { useCart, useFilter } from "../../context/Index"; 
 import { getProductList } from "../../Services/productServices";
 import CartList from "../Cart/CartList";
-import ProductCard from "../../Components/elements/Productcard";
+import ProductCard from "../../Components/elements/ProductCard";
 const ProductList = () => {
   useTitle("Ebook collection");
   const [show, setShow] = useState(false);

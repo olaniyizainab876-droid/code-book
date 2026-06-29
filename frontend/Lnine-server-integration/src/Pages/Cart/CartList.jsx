@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../../context";
-import CartCard from "./Components/CartCard";
-import Checkout from "./Components/Checkout";
+import CartCard from "./components/CartCard";
+import Checkout from "./components/Checkout";
 import { BiRightArrow } from "react-icons/bi";
 
 const CartList = () => {
@@ -14,7 +14,7 @@ const CartList = () => {
         <p className="text-2xl text-center font-semibold dark:text-slate-100 mv-10 underline underline-offset-8">
           my cart ({cartList.length})
         </p>
-      </section> 
+      </section>
 
       <section>
         {cartList.map((product) => (
