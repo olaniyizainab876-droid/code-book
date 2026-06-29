@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+import { useCart } from "../../context";
+import CartCard from "./Components/CartCard";
+import Checkout from "./Components/Checkout";
+import { BiRightArrow } from "react-icons/bi";
+
+const CartList = () => {
+  const [checkout, setCheckout] = useState(false);
+  const { cartList, total } = useCart();
+
+  return (
+    <>
+      <section>
+        <p className="text-2xl text-center font-semibold dark:text-slate-100 mv-10 underline underline-offset-8">
+          my cart ({cartList.length})
+        </p>
+      </section> 
+
+      <section>
+        {cartList.map((product) => (
+          <CartCard key={product.id} product={product} />
+        ))}
+      </section>
+
+      <section className="max-w-4xl m-auto">
+        <div className="flex flex-col p-2 border-b dark:border-slate-700 text-lg dark:text-slate-100">
+          <p className="flex justify-between my-2">
+            <span className="font-semibold">Total amount</span>
+            <span>${total}</span>
+          </p>
+        </div>
+        <div className="text-right my-5">
+          <button
+            className="text-right inline-flex items-center gap-2 bg-rose-700 font-medium rounded-lg text-base px-7 py-2.5 mr-2"
+            onClick={() => setCheckout(true)}
+            type="button"
+          >
+            PLACE ORDER <BiRightArrow />
+          </button>
+        </div>
+      </section>
+      {checkout && <Checkout setCheckout={setCheckout} />}
+    </>
+  );
+};
+
+export default CartList;
