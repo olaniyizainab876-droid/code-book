@@ -1,5 +1,5 @@
 const Ebook = require("../models/ebookModel");
-const asyncHandler = require("express-async-Handler");
+const asyncHandler = require("express-async-handler");
 const { generateUniqueId } = require("../utils");
 
 //create an ebook
