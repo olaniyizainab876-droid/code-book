@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../../context";
-import CartCard from "./components/CartCard";
-import Checkout from "./components/Checkout";
+import CartCard from "./Components/CartCard";
+import Checkout from "./Components/Checkout";
 import { BiRightArrow } from "react-icons/bi";
 
 const CartList = () => {
