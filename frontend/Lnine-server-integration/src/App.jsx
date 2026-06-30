@@ -1,7 +1,7 @@
 import React from "react";
-import { Footer, Header } from "./Components/Index"
+import { Footer, Header } from "./Components"
 
-import { Homepage } from "./Pages/Index";
+import { Homepage } from "./Pages";
 import AllRoutes from "./Routes/Allroutes";
 
 
