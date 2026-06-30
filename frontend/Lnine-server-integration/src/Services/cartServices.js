@@ -19,8 +19,8 @@ const transformCartData = (cartData) => {
 
 const getUserCart = async () => {
   try {
-    const cartData = await apiRequest(CART_ENDPOINTS.USER_CART, {
-      method: "GET",
+    const cartData = await apiRequest(CART_ENDPOINTS.GET_USER_CART, {
+      method: "POST",
     });
 
     return transformCartData(cartData);
