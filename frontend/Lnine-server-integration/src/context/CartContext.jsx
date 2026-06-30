@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
-import { cartReducer } from "../reducers";
+
 import { toast } from "react-toastify";
 import {
   addToCartAPI,
@@ -8,6 +8,7 @@ import {
   removeFromCartAPI,
 } from "../Services";
 import { toastOption } from "../config/utils";
+import { cartReducer } from "../reducers";
 
 const cartInitialState = {
   cartList: [],
