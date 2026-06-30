@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useTitle } from "../Hooks/useTitle";
-import Rating from "../Components/Elements/Rating";
+import { useTitle } from "../hooks/useTitle";
 import { toast } from "react-toastify";
 import { IoMdAdd, IoMdArrowBack } from "react-icons/io";
 import { FaTrashAlt } from "react-icons/fa";
-import { getProduct } from "../services/productServices";
+import { getProduct } from "../Services/productServices";
 import { toastOption } from "../config/utils";
 import { useCart } from "../context";
 import CartList from "./Cart/CartList";
+import { Rating } from "../Components";
 
 const ProductDetails = () => {
   const { cartList, addToCart, removeFromCart, clearCart } = useCart();

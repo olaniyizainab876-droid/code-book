@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Productcard from "../../../components/elements/ProductCard";
-import { toast } from "react-toastify";
+import ProductCard from "../../../Components/elements/ProductCard";import { toast } from "react-toastify";
 import { getFeaturedList } from "../../../Services/productServices";
 import { useCart } from "../../../context";
 
@@ -31,7 +30,7 @@ export const FeaturedProducts = () => {
 
       <div className="flex flex-wrap justify-center lg:flex-row ">
         {products.slice(0, 6).map((product) => (
-          <Productcard
+          <ProductCard
             key={product.id}
             product={product}
             cartList={cartList}
